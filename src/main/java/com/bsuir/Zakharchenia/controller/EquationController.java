@@ -4,16 +4,13 @@ import com.bsuir.Zakharchenia.Counter.CounterService;
 import com.bsuir.Zakharchenia.Counter.CounterServiceImpl;
 import com.bsuir.Zakharchenia.entity.Equation;
 import com.bsuir.Zakharchenia.service.EquationService;
-
-
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import org.apache.log4j.Logger;
 
 
 @RestController
@@ -29,7 +26,7 @@ public class EquationController {
         this.service = service;
     }
 
-    @RequestMapping("/solveEquation")
+    @GetMapping("/solveEquation")
     public ResponseEntity get_solution(@RequestParam(value = "addend") String addend,
                                        @RequestParam(value = "sum") String sum,
                                        @RequestParam(value = "leftBoard") String leftBoard,
