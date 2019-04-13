@@ -2,9 +2,9 @@ package com.bsuir.Zakharchenia.controller;
 
 import com.bsuir.Zakharchenia.Counter.CounterService;
 import com.bsuir.Zakharchenia.Counter.CounterServiceImpl;
-import com.bsuir.Zakharchenia.Parameters.InputParameters;
-import com.bsuir.Zakharchenia.Parameters.ParametersList;
 import com.bsuir.Zakharchenia.entity.Equation;
+import com.bsuir.Zakharchenia.parameters.InputParameters;
+import com.bsuir.Zakharchenia.parameters.ParametersList;
 import com.bsuir.Zakharchenia.service.EquationService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

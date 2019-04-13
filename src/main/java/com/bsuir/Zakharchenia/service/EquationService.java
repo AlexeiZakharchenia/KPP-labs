@@ -1,12 +1,12 @@
 package com.bsuir.Zakharchenia.service;
 
 
-import com.bsuir.Zakharchenia.Parameters.InputParameters;
-import com.bsuir.Zakharchenia.Parameters.ParametersList;
 import com.bsuir.Zakharchenia.answers.EquationsList;
 import com.bsuir.Zakharchenia.cache.CacheService;
 import com.bsuir.Zakharchenia.cache.CacheServiceImpl;
 import com.bsuir.Zakharchenia.entity.Equation;
+import com.bsuir.Zakharchenia.parameters.InputParameters;
+import com.bsuir.Zakharchenia.parameters.ParametersList;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

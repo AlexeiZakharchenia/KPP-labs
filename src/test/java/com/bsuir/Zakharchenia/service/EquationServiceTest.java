@@ -1,7 +1,7 @@
 package com.bsuir.Zakharchenia.service;
 
-import com.bsuir.Zakharchenia.Parameters.InputParameters;
 import com.bsuir.Zakharchenia.entity.Equation;
+import com.bsuir.Zakharchenia.parameters.InputParameters;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

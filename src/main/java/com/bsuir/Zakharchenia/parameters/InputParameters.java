@@ -1,4 +1,4 @@
-package com.bsuir.Zakharchenia.Parameters;
+package com.bsuir.Zakharchenia.parameters;
 
 
 public class InputParameters {

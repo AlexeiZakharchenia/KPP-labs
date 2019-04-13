@@ -1,7 +1,7 @@
 package com.bsuir.Zakharchenia.cache;
 
-import com.bsuir.Zakharchenia.Parameters.InputParameters;
 import com.bsuir.Zakharchenia.entity.Equation;
+import com.bsuir.Zakharchenia.parameters.InputParameters;
 
 public interface CacheService {
     void add(InputParameters inputParameters, Equation equation);

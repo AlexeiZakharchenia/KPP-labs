@@ -1,9 +1,9 @@
 package com.bsuir.Zakharchenia.cache;
 
 
-import com.bsuir.Zakharchenia.Parameters.InputParameters;
 import com.bsuir.Zakharchenia.controller.EquationController;
 import com.bsuir.Zakharchenia.entity.Equation;
+import com.bsuir.Zakharchenia.parameters.InputParameters;
 import org.apache.log4j.Logger;
 
 import java.util.concurrent.ConcurrentHashMap;
