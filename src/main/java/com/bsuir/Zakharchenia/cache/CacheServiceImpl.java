@@ -38,7 +38,6 @@ public class CacheServiceImpl implements CacheService {
 
     @Override
     public void add(InputParameters inputParameters, Equation equation) {
-
         if(cacheMap.size() > MAX_CACHE_RECORDS){
             cacheMap.clear();
             log.info("Cleared cache");

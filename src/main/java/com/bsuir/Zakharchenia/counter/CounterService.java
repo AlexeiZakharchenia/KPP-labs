@@ -1,4 +1,4 @@
-package com.bsuir.Zakharchenia.Counter;
+package com.bsuir.Zakharchenia.counter;
 
 public interface CounterService {
     void increment();

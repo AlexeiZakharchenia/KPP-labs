@@ -1,7 +1,7 @@
 package com.bsuir.Zakharchenia.controller;
 
-import com.bsuir.Zakharchenia.Counter.CounterService;
-import com.bsuir.Zakharchenia.Counter.CounterServiceImpl;
+import com.bsuir.Zakharchenia.counter.CounterService;
+import com.bsuir.Zakharchenia.counter.CounterServiceImpl;
 import com.bsuir.Zakharchenia.entity.Equation;
 import com.bsuir.Zakharchenia.parameters.InputParameters;
 import com.bsuir.Zakharchenia.parameters.ParametersList;
@@ -32,7 +32,7 @@ public class EquationController {
                                       @RequestParam(value = "leftBound") String leftBound,
                                       @RequestParam(value = "rightBound") String rightBound) {
         counterService.increment();
-        System.out.println(("Counter of requests on server:" + counterService.getCounter().toString()));
+        System.out.println(("counter of requests on server:" + counterService.getCounter().toString()));
         try {
             Equation equation = service.solveEquetion(new InputParameters(sum, addend, leftBound, rightBound));
             log.info("HTTP status 200, response :" + equation.toString());

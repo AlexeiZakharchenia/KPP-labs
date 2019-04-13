@@ -1,4 +1,4 @@
-package com.bsuir.Zakharchenia.Counter;
+package com.bsuir.Zakharchenia.counter;
 
 
 import com.bsuir.Zakharchenia.cache.CacheServiceImpl;
