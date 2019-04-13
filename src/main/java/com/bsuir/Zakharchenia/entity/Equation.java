@@ -1,15 +1,12 @@
 package com.bsuir.Zakharchenia.entity;
 
 
-import lombok.*;
-import lombok.extern.slf4j.Slf4j;
+import lombok.Data;
 
 import java.util.Objects;
 
 
-@Slf4j
 @Data
-@ToString
 public class Equation {
 
     private long id;
@@ -34,6 +31,15 @@ public class Equation {
         this.id = id;
         this.solution = solution;
         this.isInGap = isInGap;
+    }
+
+    @Override
+    public String toString() {
+        return "Equation{" +
+                "id=" + id +
+                ", solution=" + solution +
+                ", isInGap=" + isInGap +
+                '}';
     }
 }
 

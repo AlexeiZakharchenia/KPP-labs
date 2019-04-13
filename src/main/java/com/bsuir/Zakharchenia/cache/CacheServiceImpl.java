@@ -1,6 +1,7 @@
 package com.bsuir.Zakharchenia.cache;
 
 
+import com.bsuir.Zakharchenia.Parameters.InputParameters;
 import com.bsuir.Zakharchenia.controller.EquationController;
 import com.bsuir.Zakharchenia.entity.Equation;
 import org.apache.log4j.Logger;
@@ -10,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class CacheServiceImpl implements CacheService {
     private static final Logger log = Logger.getLogger(EquationController.class);
 
-    public static final Integer MAX_CACHE_RECORDS = 10;
+    public static final Integer MAX_CACHE_RECORDS = 20;
 
     private ConcurrentHashMap<InputParameters, Equation> cacheMap = new ConcurrentHashMap<>();
 
