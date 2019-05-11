@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class CacheServiceImpl implements CacheService {
     private static final Logger log = Logger.getLogger(EquationController.class);
 
-    public static final Integer MAX_CACHE_RECORDS = 20;
+    static final Integer MAX_CACHE_RECORDS = 20;
 
     private ConcurrentHashMap<InputParameters, Equation> cacheMap = new ConcurrentHashMap<>();
 

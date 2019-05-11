@@ -31,8 +31,7 @@ public class EquationController {
                                       @RequestParam(value = "sum") String sum,
                                       @RequestParam(value = "leftBound") String leftBound,
                                       @RequestParam(value = "rightBound") String rightBound) {
-        counterService.increment();
-        System.out.println(("counter of requests on server:" + counterService.getCounter().toString()));
+        counterService.incrementAndPrint();
         try {
             Equation equation = service.solveEquetion(new InputParameters(sum, addend, leftBound, rightBound));
             log.info("HTTP status 200, response :" + equation.toString());
@@ -48,14 +47,6 @@ public class EquationController {
 
     @PostMapping("/solveEquations")
     public ResponseEntity getSolutions(@RequestBody ParametersList parametersList) {
-        try {
-            return ResponseEntity.ok(service.solveEquations(parametersList));
-        } catch (NumberFormatException exception) {
-            log.info("Bad parameters (not a number)");
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Bad parameters (not a number)");
-        } catch (IllegalArgumentException exception) {
-            log.info(exception.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exception.getMessage());
-        }
+        return ResponseEntity.ok(service.solveEquations(parametersList));
     }
 }

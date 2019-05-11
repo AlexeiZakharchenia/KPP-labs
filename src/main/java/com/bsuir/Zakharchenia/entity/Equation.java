@@ -41,6 +41,30 @@ public class Equation {
                 ", isInGap=" + isInGap +
                 '}';
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public int getSolution() {
+        return solution;
+    }
+
+    public void setSolution(int solution) {
+        this.solution = solution;
+    }
+
+    public boolean isInGap() {
+        return isInGap;
+    }
+
+    public void setInGap(boolean inGap) {
+        isInGap = inGap;
+    }
 }
 
 

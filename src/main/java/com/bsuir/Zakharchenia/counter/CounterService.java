@@ -1,6 +1,6 @@
 package com.bsuir.Zakharchenia.counter;
 
 public interface CounterService {
-    void increment();
+    void incrementAndPrint();
     Long getCounter();
 }

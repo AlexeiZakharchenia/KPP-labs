@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gs-spring-boot" />
+        <module name="KPP-labs" />
         <module name="Myfirstweb" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="KPP-labs" options="-parameters" />
       <module name="Myfirstweb" options="-parameters" />
       <module name="gs-spring-boot" options="-parameters" />
     </option>

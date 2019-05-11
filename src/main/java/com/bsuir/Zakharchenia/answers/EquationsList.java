@@ -4,25 +4,25 @@ import com.bsuir.Zakharchenia.entity.Equation;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Data
 public class EquationsList {
-    private ArrayList<Equation> equations = new ArrayList<>();
+    private List<Equation> equations = new ArrayList<>();
 
     public EquationsList(ArrayList<Equation> equations) {
         this.equations = equations;
     }
 
     public EquationsList() {
-
     }
 
-    public ArrayList<Equation> getEquations() {
+    public List<Equation> getEquations() {
         return equations;
     }
 
-    public void setEquations(ArrayList<Equation> equations) {
+    public void setEquations(List<Equation> equations) {
         this.equations = equations;
     }
 

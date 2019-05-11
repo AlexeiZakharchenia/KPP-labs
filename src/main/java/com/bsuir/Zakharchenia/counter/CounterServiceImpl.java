@@ -30,8 +30,8 @@ public class CounterServiceImpl implements CounterService {
     }
 
     @Override
-    public void increment() {
-        counter.incrementAndGet();
+    public synchronized void incrementAndPrint() {
+        System.out.println(("Counter of requests on server: " + counter.incrementAndGet()));
     }
 
     @Override
