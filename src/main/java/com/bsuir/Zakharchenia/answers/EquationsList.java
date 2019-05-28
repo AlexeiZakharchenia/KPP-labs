@@ -4,7 +4,6 @@ import com.bsuir.Zakharchenia.entity.Equation;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,7 +25,7 @@ public class EquationsList {
     )
     private List<Equation> equations;
 
-    public EquationsList(ArrayList<Equation> equations) {
+    public EquationsList(List<Equation> equations) {
         this.equations = equations;
     }
 
