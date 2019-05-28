@@ -1,7 +1,7 @@
 package com.bsuir.Zakharchenia.controller;
 
+import com.bsuir.Zakharchenia.answers.EquationsList;
 import com.bsuir.Zakharchenia.counter.CounterService;
-import com.bsuir.Zakharchenia.counter.CounterServiceImpl;
 import com.bsuir.Zakharchenia.entity.Equation;
 import com.bsuir.Zakharchenia.parameters.InputParameters;
 import com.bsuir.Zakharchenia.parameters.ParametersList;
@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.*;
 public class EquationController {
 
 
-    private CounterService counterService = CounterServiceImpl.getInstance();
+    @Autowired
+    private CounterService counterService;
+
     private EquationService service;
+
     private static final Logger log = Logger.getLogger(EquationController.class);
 
     @Autowired
@@ -49,4 +52,15 @@ public class EquationController {
     public ResponseEntity getSolutions(@RequestBody ParametersList parametersList) {
         return ResponseEntity.ok(service.solveEquations(parametersList));
     }
+
+
+    @GetMapping("/getResponseById")
+    public ResponseEntity getResponseByID(@RequestParam(value = "responseId") String responseId) {
+        EquationsList equationsList = service.getEquationsByID(responseId);
+        if (equationsList == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Not found response with this id");
+        }
+        return ResponseEntity.ok(equationsList);
+    }
+
 }

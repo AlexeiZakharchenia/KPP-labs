@@ -1,7 +1,10 @@
 package com.bsuir.Zakharchenia.validator;
 
 import com.bsuir.Zakharchenia.parameters.InputParameters;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class Validator {
 
     public boolean isValid(InputParameters inputParameters) {

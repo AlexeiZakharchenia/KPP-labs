@@ -3,15 +3,38 @@ package com.bsuir.Zakharchenia.entity;
 
 import lombok.Data;
 
+import javax.persistence.*;
 import java.util.Objects;
 
-
 @Data
+@Entity
+@Table(name = "equations")
 public class Equation {
 
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+
     private int solution;
-    private boolean isInGap;
+
+    @Column(name = "in_gap")
+    private boolean inGap;
+
+
+    public Equation() {
+    }
+
+    public Equation(int solution, boolean inGap) {
+        this.solution = solution;
+        this.inGap = inGap;
+    }
+
+    public Equation(int id, int solution, boolean inGap) {
+        this.id = id;
+        this.solution = solution;
+        this.inGap = inGap;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -19,18 +42,12 @@ public class Equation {
         if (o == null || getClass() != o.getClass()) return false;
         Equation equation = (Equation) o;
         return solution == equation.solution &&
-                isInGap == equation.isInGap;
+                inGap == equation.inGap;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(solution, isInGap);
-    }
-
-    public Equation(long id, int solution, boolean isInGap) {
-        this.id = id;
-        this.solution = solution;
-        this.isInGap = isInGap;
+        return Objects.hash(solution, inGap);
     }
 
     @Override
@@ -38,15 +55,15 @@ public class Equation {
         return "Equation{" +
                 "id=" + id +
                 ", solution=" + solution +
-                ", isInGap=" + isInGap +
+                ", inGap=" + inGap +
                 '}';
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -59,11 +76,11 @@ public class Equation {
     }
 
     public boolean isInGap() {
-        return isInGap;
+        return inGap;
     }
 
     public void setInGap(boolean inGap) {
-        isInGap = inGap;
+        this.inGap = inGap;
     }
 }
 

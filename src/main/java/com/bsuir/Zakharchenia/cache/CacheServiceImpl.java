@@ -1,39 +1,34 @@
 package com.bsuir.Zakharchenia.cache;
 
 
-import com.bsuir.Zakharchenia.controller.EquationController;
 import com.bsuir.Zakharchenia.entity.Equation;
 import com.bsuir.Zakharchenia.parameters.InputParameters;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+
+@Service
+@Qualifier(value = "cacheServiceImpl")
 public class CacheServiceImpl implements CacheService {
-    private static final Logger log = Logger.getLogger(EquationController.class);
+    private static final Logger log = Logger.getLogger(CacheServiceImpl.class);
 
     static final Integer MAX_CACHE_RECORDS = 20;
 
     private ConcurrentHashMap<InputParameters, Equation> cacheMap = new ConcurrentHashMap<>();
 
-    private static volatile CacheServiceImpl instance = null;
 
-    private CacheServiceImpl() {
+    public CacheServiceImpl() {
     }
 
-    public static CacheServiceImpl getInstance() {
-        CacheServiceImpl localInstance = instance;
+    public static Integer getMaxCacheRecords() {
+        return MAX_CACHE_RECORDS;
+    }
 
-        if (instance == null) {
-            synchronized (CacheServiceImpl.class) {
-                localInstance = instance;
-                if (localInstance == null) {
-                    instance = localInstance = new CacheServiceImpl();
-                }
-
-            }
-
-        }
-        return instance;
+    public ConcurrentHashMap<InputParameters, Equation> getCacheMap() {
+        return cacheMap;
     }
 
     @Override

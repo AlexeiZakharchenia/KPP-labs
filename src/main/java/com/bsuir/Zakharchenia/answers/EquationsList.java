@@ -3,13 +3,28 @@ package com.bsuir.Zakharchenia.answers;
 import com.bsuir.Zakharchenia.entity.Equation;
 import lombok.Data;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Data
+@Entity
+@Table(name = "responses")
 public class EquationsList {
-    private List<Equation> equations = new ArrayList<>();
+
+
+    @Id
+    @Column(name = "response_id")
+    private String responseId;
+
+    @ManyToMany
+    @JoinTable(
+            name = "response_equations",
+            joinColumns = @JoinColumn(name = "response_id"),
+            inverseJoinColumns = @JoinColumn(name = "equation_id")
+    )
+    private List<Equation> equations;
 
     public EquationsList(ArrayList<Equation> equations) {
         this.equations = equations;
@@ -24,6 +39,14 @@ public class EquationsList {
 
     public void setEquations(List<Equation> equations) {
         this.equations = equations;
+    }
+
+    public String getResponseId() {
+        return responseId;
+    }
+
+    public void setResponseId(String responseId) {
+        this.responseId = responseId;
     }
 
     @Override

@@ -2,7 +2,9 @@ package com.bsuir.Zakharchenia.parameters;
 
 import java.util.ArrayList;
 
+
 public class ParametersList {
+
     private ArrayList<InputParameters> parameters = new ArrayList<>();
 
     public ParametersList() {
